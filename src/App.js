@@ -1,16 +1,11 @@
 import './App.css';
-import axios from "axios";
-function App() {
+import Search from "./Search"
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-        <p>
-        hi
-        </p>
-      </header>
+      <h1>Weather App</h1>
+      <Search />
     </div>
   );
 }
-
-export default App;
