@@ -7,7 +7,7 @@ export default function App() {
       <h1>Weather App</h1>
       <Search />
       <a
-        href="https://github.com/annaBalabak/weather-app"
+        href="https://github.com/annaBalabak/weather-react"
         target="_blank"
         rel="noreferrer"
       >
