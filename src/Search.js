@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Search.css"
+import "bootstrap/dist/css/bootstrap.css";
+import "./Search.css";
 
 export default function Weather() {
   const [city, setCity] = useState(" ");
@@ -29,10 +30,27 @@ export default function Weather() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit}>
-      <input type="search" placeholder="Enter a city.." onChange={updateCity} />
-      <button type="Submit">Search</button>
-    </form>
+    <div className="main">
+      <form className="search-form" onSubmit={handleSubmit}>
+        <div class="row">
+          <div class="col-6">
+            <input
+              className="input form-control shadow-sm"
+              type="search"
+              placeholder="Enter a city.."
+              onChange={updateCity}
+            />
+          </div>
+          <div class="col-3">
+            <input
+              type="submit"
+              value="Current City"
+              class="submit-two form-control btn btn-success shadow-sm"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
   );
 
   if (loaded) {
