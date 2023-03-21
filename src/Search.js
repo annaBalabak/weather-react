@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Search.css";
+import DateForm from "./DateForm";
 
 export default function Weather() {
   const [city, setCity] = useState(" ");
@@ -15,11 +16,14 @@ export default function Weather() {
   function showWeather(response) {
     setLoaded(true);
     setWeather({
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      min: response.data.main.temp_min,
+      max: response.data.main.temp_max,
     });
   }
 
@@ -32,8 +36,8 @@ export default function Weather() {
   let form = (
     <div className="main">
       <form className="search-form" onSubmit={handleSubmit}>
-        <div class="row">
-          <div class="col-6">
+        <div className="row">
+          <div className="col-6">
             <input
               className="input form-control shadow-sm"
               type="search"
@@ -41,11 +45,11 @@ export default function Weather() {
               onChange={updateCity}
             />
           </div>
-          <div class="col-3">
+          <div className="col-3">
             <input
               type="submit"
               value="Current City"
-              class="submit-two form-control btn btn-success shadow-sm"
+              className="submit-two form-control btn btn-success shadow-sm"
             />
           </div>
         </div>
@@ -57,15 +61,39 @@ export default function Weather() {
     return (
       <div>
         {form}
-        <ul>
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
-          <li>Description: {weather.description}</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind: {Math.round(weather.wind)}km/h</li>
-          <li>
-            <img src={weather.icon} alt={weather.description} />
-          </li>
-        </ul>
+        <div className="container">
+          <div className="main">
+            <h1>{city}</h1>
+            <h2><DateForm date={weather.date} /></h2>
+            <h3></h3>
+            <div className="temp-container">
+              <img src={weather.icon} alt={weather.description} width="100px" />
+              <span className="temperature">
+                {Math.round(weather.temperature)}
+              </span>{" "}
+              <span className="units">
+                {" "}
+                <a className="active" href="#">
+                  ° C
+                </a>{" "}
+                | <a href="#">° F</a>{" "}
+              </span>
+            </div>
+            <div className="discription mt-3">
+              <p className="conditions">{weather.description}</p>
+              <p className="windspeed">
+                Wind speed: {Math.round(weather.wind)} km/h
+              </p>
+              <p className="humidity">Humidity: {weather.humidity}%</p>
+              <p className="temperature-range">
+                Min <span className="min">{Math.round(weather.min)}</span>° C /
+                Max <span className="max"> {Math.round(weather.max)}</span>° C
+              </p>
+            </div>
+            <div></div>
+          </div>
+        </div>
+        ;
       </div>
     );
   } else {
