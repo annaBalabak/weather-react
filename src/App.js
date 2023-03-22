@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 export default function App() {
   return (
     <div className="App">
-    <Search />
+    <Search defaultCity = "Kyiv" />
     
     
     <div className="link-github">
