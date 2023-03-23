@@ -53,7 +53,7 @@ h3,
 h3 {
   font-size: 20px;
 }
-#icon,
+.icon,
 .forecast-img {
   background: inherit;
 }
@@ -81,7 +81,7 @@ p {
   text-decoration: none;
   cursor: default;
 }
-img {
+.icon {
   background: rgba(240, 251, 250, 0.566);
   padding: 10px;
   border-radius: 25px;
