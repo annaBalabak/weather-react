@@ -1,11 +1,12 @@
 import React from "react";
 import DateForm from "./DateForm";
 import WeatherTemperature from "./WeatherTemperature";
+import "./App.css";
 
 export default function WeatherData(props) {
   return (
-    <div className="container">
-      <div className="main">
+    <div className="WeatherData">
+      <div className="container">
         <h1>{props.data.city}</h1>
         <h2>
           <DateForm date={props.data.date} />

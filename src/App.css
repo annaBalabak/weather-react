@@ -4,6 +4,93 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.App .main {
+  max-width: 800px;
+  margin: 50px auto 0;
+  background-color: rgba(0, 217, 255, 0.414);
+  padding: 50px;
+}
+.input {
+  text-align: center;
+}
+input {
+  padding: 10px;
+  border: none;
+  border-radius: 10px 10px 0px 0px;
+  width: 50%;
+}
+
+.WeatherData h1,
+h2,
+h3,
+.temp-container,
+p {
+  text-align: center;
+}
+.WeatherData h1,
+h2 {
+  margin-top: 30px;
+}
+.WeatherData h1,
+h2,
+h3,
+.temp-container,
+.conditions,
+.windspeed,
+.humidity,
+.temperature-range {
+  text-shadow: 5px 5px 5px rgb(213, 231, 248);
+}
+.WeatherData .discription {
+  margin: 0 auto 30px;
+  background: rgba(213, 231, 248, 0.485);
+  max-width: 300px;
+  border-radius: 10px 100px / 120px;
+}
+.WeatherData .conditions,
+.windspeed,
+.humidity,
+.temperature-range {
+  font-size: 18px;
+  margin: 0;
+}
+
+.WeatherData h3 {
+  font-size: 20px;
+  font-style: italic;
+}
+.WeatherData .icon,
+.forecast-img {
+  background: inherit;
+}
+.conditions:first-letter {
+  text-transform: capitalize;
+}
+
+p {
+  font-size: 25px;
+}
+.temp-container {
+  font-size: 45px;
+}
+.units {
+  position: relative;
+  top: -20px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.icon {
+  background: rgba(240, 251, 250, 0.566);
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.forecast-date,
+.forecast-min {
+  opacity: 0.7;
+}
+
 .link-github {
   font-size: 15px;
   text-align: center;

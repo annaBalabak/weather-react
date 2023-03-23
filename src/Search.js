@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
-import "./Search.css";
+import "./App.css";
 import WeatherData from "./WeatherData";
 
 export default function Weather(props) {
@@ -39,28 +39,35 @@ export default function Weather(props) {
 
   if (loaded) {
     return (
-          <div className="main">
-      <form className="search-form" onSubmit={handleSubmit}>
-        <div className="row">
-          <div className="col-6">
-            <input
-              className="input form-control shadow-sm"
-              type="search"
-              placeholder="Enter a city.."
-              onChange={updateCity}
-            />
+      <div className="Search">
+        <form className="search-form" onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-6">
+              <input
+                className="input form-control shadow-sm"
+                type="search"
+                placeholder="Enter a city.."
+                onChange={updateCity}
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="submit form-control btn btn-primary shadow-sm"
+              />
+            </div>
+            <div className="col-3">
+              <input
+                type="submit"
+                value="Current City"
+                className="submit-two form-control btn btn-success shadow-sm"
+              />
+            </div>
           </div>
-          <div className="col-3">
-            <input
-              type="submit"
-              value="Current City"
-              className="submit-two form-control btn btn-success shadow-sm"
-            />
-          </div>
-        </div>
-      </form>
-      <WeatherData data={weather} />
-    </div>
+        </form>
+        <WeatherData data={weather} />
+      </div>
     );
   } else {
     search();
