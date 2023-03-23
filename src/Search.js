@@ -50,11 +50,11 @@ export default function Weather(props) {
                 onChange={updateCity}
               />
             </div>
-            <div class="col-3">
+            <div className="col-3">
               <input
                 type="submit"
                 value="Search"
-                class="submit form-control btn btn-primary shadow-sm"
+                className="submit form-control btn btn-primary shadow-sm"
               />
             </div>
             <div className="col-3">
