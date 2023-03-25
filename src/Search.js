@@ -3,6 +3,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import WeatherData from "./WeatherData";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -25,11 +26,13 @@ export default function Weather(props) {
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       min: response.data.main.temp_min,
       max: response.data.main.temp_max,
+      coordinates: response.data.coord,
     });
   }
   function search() {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=094780c710fa4efd669f0df8c3991927&units=metric`;
-    axios.get(url).then(showWeather);
+    let apiKey = "094780c710fa4efd669f0df8c3991927";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showWeather);
   }
 
   function handleSubmit(event) {
@@ -60,10 +63,12 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherData data={weather} />
+        <WeatherForecast coordinates={weather.coordinates}
+        icon = {weather.icon} />
       </div>
     );
   } else {
     search();
-    return;
+    return "Loading...";
   }
 }
