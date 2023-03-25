@@ -12,11 +12,12 @@ export default function WeatherData(props) {
           <DateForm date={props.data.date} />
         </h2>
         <h3>
-        <WeatherTemperature
-          celsius={props.data.temperature}
-          icon={props.data.icon}
-          description={props.data.description}
-        /> </h3>
+          <WeatherTemperature
+            celsius={props.data.temperature}
+            icon={props.data.icon}
+            description={props.data.description}
+          />{" "}
+        </h3>
         <div className="discription mt-3">
           <p className="conditions">{props.data.description}</p>
           <p className="windspeed">
