@@ -102,3 +102,25 @@ p {
   padding: 10px;
   margin: 0 auto 50px;
 }
+
+@media all and (max-width:450px){
+.App .main{
+  padding: 10px;
+  
+}
+.Search .input, .Search .submit{
+ font-size: 10px;
+}
+.WeatherData h1{
+  font-size: 30px;
+}
+.WeatherData h3{
+  font-size: 15px;
+}
+.WeatherData .temp-container{
+  font-size: 35px;
+}
+.WeatherData .conditions, .windspeed, .humidity, .temperature-range {
+    font-size: 12px;
+}
+}
