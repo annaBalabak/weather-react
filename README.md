@@ -1,5 +1,9 @@
-<h1 align='center'>Weather Forecast App 🌏</h1>
+<div align='center'>
+<h1>Weather Forecast App</h1>
+<img src='https://media.giphy.com/media/QRhtqYeEywJI4/giphy.gif' width='200px'/>
+</div>
 <h3>This is a weather application built with React that provides a 5-day forecast. It allows users to search for a specific location and retrieves weather information including minimum and maximum temperature, humidity, wind speed, and weather conditions for the next 5 days.</h3>
+
 <hr>
 <h2 align="center"> <em>Features</em></h2>
 <p><b>Location Search: </b> Users can enter the name of a needed location in the search bar and click the "Search" button to retrieve the weather forecast for that location.</p>
@@ -17,14 +21,13 @@
   <li>Open a web browser and navigate to http://localhost:3000 to view the application.</li>
 </ol>
 <hr>
-<h2 align="center"> <em>This project is built with:</em></h2>
-<ul>
-  <li>React</li>
-  <li>HTML5</li>
-  <li>CSS3</li>
-  <li>JavaScript</li>
-  <li>OpenWeatherMap API</li>
-</ul>
+<div align="center">
+<h2><em>This project is built with:</em></h2>
+  <img src='https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg' width='80px'/>
+  <img src='https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg' width='80px'/>
+  <img src='https://github.com/devicons/devicon/blob/master/icons/html5/html5-original-wordmark.svg' width='80px'/>
+  <img src='https://github.com/devicons/devicon/blob/master/icons/css3/css3-original-wordmark.svg' width='80px'/>
+</div>
 <hr>
 <h2 align="center"> <em>License</em></h2>
 <p>This project is licensed under the MIT License. Feel free to use, modify, and distribute the code as per the terms of this license.</p>
